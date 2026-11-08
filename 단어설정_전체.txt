@@ -1,0 +1,425 @@
+﻿논문 키프레이즈 워드클라우드 — 단어 설정 파일
+코드 버전 a73b136
+==============================================================================
+
+
+[custom_phrases.txt]
+------------------------------------------------------------------------------
+# ─────────────────────────────────────────────────────────────
+# 반드시 하나의 키프레이즈로 인식시킬 구문 (한 줄에 하나)
+#  - 저자키워드에 등장하는 구문과 제목/초록에서 여러 논문(기본 3편 이상)에 반복되는
+#    명사구는 자동으로 인식되므로, 자동 인식이 안 되는 구문만 추가하면 됩니다.
+#  - 전치사가 포함된 구문(예: "quality of life")은 저자키워드에 없으면 자동 인식되지 않으니
+#    필요 시 여기에 적어 주세요.
+# ─────────────────────────────────────────────────────────────
+quality of life
+internet of things
+
+
+[exclude_phrases.txt]
+------------------------------------------------------------------------------
+# ─────────────────────────────────────────────────────────────
+# 집계에서 완전히 제외할 키프레이즈 (1단어·다단어 모두 가능)
+#  - 단수/복수·대소문자·하이픈 차이는 자동으로 맞춰집니다.
+#
+# 기본값은 비어 있습니다.
+#  · 'odds ratio'·'present study'처럼 저자가 키워드로 달지 않는 말은
+#    일반어 필터가 이미 자동으로 걸러내므로 여기 적을 필요가 없습니다.
+#  · 'human'·'female'·'aged'처럼 DB가 붙이는 색인어는 분야에 따라
+#    주제어일 수 있어(젠더 연구·노령 연구) 기본 제외로 두지 않고,
+#    엑셀을 올린 뒤 '분석 전 정리 추천'에서 몇 편에 나오는지 보고 고르게 합니다.
+#
+# 내 데이터에만 해당하는 말은 아래에 한 줄씩 적으세요.
+# ─────────────────────────────────────────────────────────────
+
+
+[modifiers.txt]
+------------------------------------------------------------------------------
+# ─────────────────────────────────────────────────────────────
+# 수식어 목록: 제목/초록에서 구문을 자동 추출할 때 구문의 '앞'이나 '끝'에 올 수 없는 단어
+#  예) "novel therapeutic strategy" → "therapeutic strategy" 로 인식
+#      "significant increase"      → 구문으로 인정하지 않음
+#  ※ 저자키워드·custom_phrases.txt 에 있는 구문은 이 목록의 영향을 받지 않습니다.
+# ─────────────────────────────────────────────────────────────
+significant
+significantly
+novel
+new
+various
+several
+different
+diverse
+potential
+proposed
+present
+current
+previous
+prior
+recent
+overall
+additional
+further
+other
+such
+many
+multiple
+numerous
+main
+major
+key
+important
+critical
+crucial
+essential
+specific
+particular
+similar
+same
+higher
+lower
+greater
+better
+larger
+smaller
+stronger
+weaker
+increased
+decreased
+improved
+enhanced
+reduced
+elevated
+independent
+available
+effective
+efficient
+comprehensive
+promising
+excellent
+superior
+remarkable
+unique
+possible
+relevant
+useful
+good
+great
+strong
+favorable
+positive
+negative
+notable
+substantial
+considerable
+common
+typical
+conventional
+traditional
+existing
+respective
+corresponding
+underlying
+related
+associated
+certain
+entire
+whole
+initial
+final
+first
+second
+third
+total
+general
+overall
+standard
+simple
+various
+wide
+broad
+detailed
+extensive
+significant
+state-of-the-art
+well-known
+so-called
+
+
+[stopwords.txt]
+------------------------------------------------------------------------------
+# ─────────────────────────────────────────────────────────────
+# 1단어 키워드로는 집계하지 않을 '일반적인' 단어 목록
+#  - 한 줄에 하나씩. 단수/복수·대소문자 구분 없이 한 번만 적으면 됩니다.
+#  - 여기 적은 단어도 다른 단어와 결합한 구문의 일부로는 집계됩니다.
+#    (예: "study"는 제외되지만 "cohort study"는 집계)
+#  - 영어 기능어(the, of, and ...)는 프로그램이 자동으로 제외합니다.
+#  - '#' 뒤는 주석입니다.
+# ─────────────────────────────────────────────────────────────
+
+# 연구·논문 서술 일반어
+study
+research
+paper
+article
+review
+report
+result
+finding
+method
+methodology
+approach
+analysis
+data
+dataset
+background
+purpose
+objective
+aim
+goal
+conclusion
+introduction
+discussion
+evidence
+information
+work
+experiment
+investigation
+evaluation
+assessment
+examination
+observation
+test
+measure
+measurement
+comparison
+validation
+application
+development
+implementation
+process
+procedure
+technique
+strategy
+framework
+tool
+model
+system
+design
+performance
+feature
+characteristic
+property
+parameter
+variable
+factor
+mechanism
+condition
+context
+aspect
+issue
+problem
+challenge
+limitation
+implication
+insight
+understanding
+knowledge
+field
+area
+domain
+topic
+term
+way
+part
+form
+kind
+type
+category
+class
+set
+series
+range
+degree
+extent
+scale
+number
+amount
+value
+score
+ratio
+proportion
+percentage
+rate
+level
+total
+mean
+median
+average
+change
+increase
+decrease
+reduction
+improvement
+enhancement
+difference
+variation
+association
+relationship
+correlation
+effect
+impact
+influence
+role
+function
+contribution
+importance
+significance
+interest
+attention
+focus
+need
+potential
+ability
+capacity
+possibility
+opportunity
+trend
+pattern
+status
+state
+situation
+quality
+efficiency
+effectiveness
+presence
+absence
+lack
+addition
+basis
+order
+respect
+end
+point
+site
+source
+target
+use
+usage
+case
+example
+people
+individual
+subject
+participant
+patient
+population
+sample
+group
+cohort
+member
+year
+month
+week
+day
+hour
+time
+period
+duration
+stage
+phase
+step
+baseline
+follow
+control
+support
+option
+outcome
+response
+condition
+research
+technology
+material
+structure
+method
+
+# 통계·약어 잔여 표현
+et
+al
+vs
+ie
+eg
+etc
+ci
+hr
+aor
+ahr
+irr
+iqr
+sd
+se
+rr
+min
+max
+fold
+
+
+[synonyms.txt]
+------------------------------------------------------------------------------
+# ─────────────────────────────────────────────────────────────
+# 표기가 다르지만 같은 개념으로 합칠 키프레이즈
+#   형식:  변형표기 => 대표표기
+#          변형1 | 변형2 => 대표표기      (여러 개를 한 줄에)
+#  - 단수/복수, 대소문자, 하이픈(-)·소유격('s) 차이는 자동으로 합쳐지므로 적을 필요 없습니다.
+#    (예: "Large Language Models" = "large language model", "meta analysis" = "meta-analysis")
+#  - 논문 안에서 정의된 약어는 자동으로 풀어 씁니다. 예) "large language models (LLMs)" 이후의 LLM
+#  - 대표표기에 적힌 모양은 참고용이며, 결과 표기는 실제 논문에서 가장 많이 쓰인 형태로 표시됩니다.
+# ─────────────────────────────────────────────────────────────
+South Korea | Republic of Korea => Korea
+
+# 필요 시 '#'을 지우고 사용하세요 (예시)
+# SARS-CoV-2 infection | COVID-19 pandemic => COVID-19
+# type 2 diabetes mellitus | T2DM => type 2 diabetes
+# AI => artificial intelligence
+# LLM => large language model
+
+
+[trailing_generic.txt]
+------------------------------------------------------------------------------
+# ─────────────────────────────────────────────────────────────
+# 자동 추출 구문의 '마지막 단어'로 오면 구문으로 인정하지 않을 일반 명사
+#  예) "deep learning model"  → "deep learning" + (model 제외)
+#      "machine learning approach" → "machine learning"
+#  ※ 저자키워드에 그대로 등장한 구문(예: "large language model")은 영향을 받지 않습니다.
+# ─────────────────────────────────────────────────────────────
+study
+approach
+method
+methodology
+framework
+strategy
+technique
+group
+level
+process
+tool
+model
+result
+finding
+effect
+role
+value
+use
+application
+development
+evaluation
+assessment
+investigation
+purpose
+aim
+analysis
+performance
+characteristic
+feature
+aspect
+parameter
+factor
